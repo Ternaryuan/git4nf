@@ -1,8 +1,9 @@
 from flask import render_template
-from app import app, db
+from . import main
 
 
-@app.route('/')
-@app.route('/index/')
+@main.route('/')
+@main.route('/index/')
 def index():
+    # TODO: NewFolder.html
     return render_template('NewFolder.html')
