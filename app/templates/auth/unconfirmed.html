@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>
+        We are sorry, but your email address has not been confirmed.<br/>
+        Please check your email box to confirm your account.<br/>
+        Or click on the following link so that we will resend an email for confirmation:<br/>
+        <a href="{{ url_for('auth.resend_confirmation') }}">click here</a>
+    </p>
+{% endblock %}

@@ -9,11 +9,11 @@ from .. import db
 
 @auth.before_app_request
 def before_request():
-    if current_user.is_authenticated \
-        and not current_user.confirmed \
-        and request.endpoint[:5] != 'auth.'\
-        and request.endpoint != 'static':
-        return redirect(url_for('auth.unconfirmed'))
+    if current_user.is_authenticated:
+        if not current_user.confirmed:
+            if request.endpoint[:5] != 'auth.':
+                if request.endpoint != 'static':
+                    return redirect(url_for('auth.unconfirmed'))
 
 
 @auth.route('/unconfirmed/')
@@ -34,7 +34,7 @@ def login():
             return redirect(request.args.get('next') or url_for('main.index'))
         form.password.data = ''
         flash('Invalid username or password.')
-    # TODO: auth/login.html
+    # Done: auth/login.html
     return render_template('auth/login.html', form=form)
 
 
@@ -59,7 +59,7 @@ def register():
         flash('A confirmation email has been sent to you by email.')
         return redirect(url_for('auth.login'))
     form.password.data = None
-    form.password2.data = None
+    form.password_confirm.data = None
     # TODO: auth/register.html
     return render_template('auth/register.html', form=form)
 
@@ -76,7 +76,7 @@ def confirm(token):
     return redirect(url_for('main.index'))
 
 
-@auth.route('/confirm/')
+@auth.route('/resend_confirmation/')
 @login_required
 def resend_confirmation():
     token = current_user.generate_confirmation_token()

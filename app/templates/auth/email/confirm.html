@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation for NewFolder!</title>
+</head>
+<body>
+<p>
+    Dear {{ user.username }},<br/>
+    Welcome to NewFolder!<br/>
+    To confirm your account please click on the following link:<br/>
+    <a href="{{ url_for('auth.confirm', token=token, _external=True) }}">Confirm</a><br/>
+    or copy the following link and open it in browser:<br/>
+    {{ url_for('auth.confirm', token=token, _external=True) }}<br/>
+</p>
+<p>
+    Sincerely,<br/>
+    The NewFolder Team<br/>
+    Note: replies to this email address are not monitored.<br/>
+</p>
+</body>
+</html>

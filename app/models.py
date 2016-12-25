@@ -53,6 +53,7 @@ class User(UserMixin, db.Model):
             return False
         self.confirmed = True
         db.session.add(self)
+        # TODO: need commit?
         return True
 
 

@@ -2,7 +2,7 @@ Dear {{ user.username }},
 
 Welcome to NewFolder!
 
-To confirm your account please click on the followint link:
+To confirm your account please click on the following link:
 
 {{ url_for('auth.confirm', token=token, _external=True) }}
 
