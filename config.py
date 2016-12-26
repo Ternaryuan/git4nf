@@ -13,7 +13,7 @@ class Config:
     APP_MAIL_SUBJECT_PREFIX = '[NewFolder]'
     # 定义发件人信息
     warnings.warn('上线前将发件人邮箱改为实际使用的邮箱!')
-    APP_MAIL_SENDER = 'NewFolder Admin <993873600@qq.com>'
+    APP_MAIL_SENDER = 'NewFolder Admin <NewFolderTeam@outlook.com>'
     # 定义管理员
     APP_ADMIN = os.environ.get('NF_ADMIN')
 
@@ -26,18 +26,14 @@ class DevelopmentConfig(Config):
     # 开启调试模式
     DEBUG = True
     # 使用谷歌SMTP服务器
-    MAIL_SERVER = 'smtp.qq.com'
+    MAIL_SERVER = 'smtp-mail.outlook.com'
     # 使用587端口发送邮件
-    MAIL_PORT = 25
+    MAIL_PORT = 587
     # 使用TLS(安全传输层协议)保护数据
     MAIL_USE_TLS = True
     # 定义邮箱用户名和密码,从环境变量中读取
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-
-    # TODO: delete this!
-    MAIL_USERNAME = '993873600@qq.com'
-    MAIL_PASSWORD = 'Asdfghjkl1'
     # 定义调试使用的数据库
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'data-dev.sqlite')
