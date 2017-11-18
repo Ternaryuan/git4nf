@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Email</title>
+</head>
+<body>
+<p>
+    Click on the following link to change your email address to {{ new_email }}:
+    <a href="{{ url_for('auth.change_email', token=token, _external=True) }}">Confirm!</a>
+</p>
+</body>
+</html>
