@@ -18,16 +18,18 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     z-index: 1;
 }
 #bg_image{
-    width:100%;
-    height:100%;
+    width:110%;
+    height:110%;
     position: fixed;
-    background-image:url(../img/42074494.jpg);
-    background-size: cover;
-    background-attachment: fixed;
     background-color: #141922;
-    background-position-x:50%;
-    background-position-y:50%;
     z-index: 1;
+    top:-5%;
+    left: -5%;
+    /*background-image:url(../img/42074494.jpg);*/
+    /*background-size: cover;*/
+    /*background-attachment: fixed;*/
+    /*background-position-x:50%;*/
+    /*background-position-y:50%;*/
 }
 #main_lg {
     position: fixed;

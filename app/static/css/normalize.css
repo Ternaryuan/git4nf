@@ -88,6 +88,7 @@ template {
 
 a {
   background-color: transparent;
+  text-decoration: none;
 }
 
 /**
@@ -133,9 +134,10 @@ dfn {
  * contexts in Firefox 4+, Safari, and Chrome.
  */
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+h1,h2,h3,h4,h5,h6,ul,li{
+  margin:0;
+  padding:0;
+  list-style-type: none;
 }
 
 /**
@@ -421,4 +423,69 @@ table {
 td,
 th {
   padding: 0;
+}
+/*ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+.nav_top{
+    zoom: 1;
+    width: 980px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+li.nav_top_menu{
+    float: left;
+    padding-right: 20%;
+    font-size: 14px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+
+}
+.nav_face{
+    position: absolute;
+    height: 36px;
+    width: 36px;
+}
+div{
+    display: block;
+}
+ul.menu{
+    float: left;
+    position: relative;
+    width:60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+div.nav_top_content{
+
+    display: block;
+}
+.nav_top_menu_word{
+    position: absolute;
+
+    margin-left: 40%;
+}
+.nav_top_mask{
+    display:block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #66ccff;
+}
+.nav_top_mask_bg{
+    position: absolute;
+    height: 50px;
+    padding: 0 20px;
+    top: -10px;
+    left: -20px;
+    width: 100%;
+    -webkit-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    background-position: center 0!important ;
+    background-repeat: no-repeat;
 }
